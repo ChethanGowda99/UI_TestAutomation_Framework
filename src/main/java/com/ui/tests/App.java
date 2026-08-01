@@ -1,4 +1,4 @@
-package org.example;
+package com.ui.tests;
 
 /**
  * Hello world!
