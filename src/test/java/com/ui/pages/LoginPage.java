@@ -10,7 +10,8 @@ public final class LoginPage extends BrowserUtility
     private static final  By PASSWORD_TEXTBOX_LOCATOR = By.id("passwd");
     private static final  By SIGNIN_BUTTON_LOCATOR = By.id("SubmitLogin");
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver)
+    {
         super(driver);
     }
     public MyAccountPage doLoginWith(String emailAddress, String Password)
