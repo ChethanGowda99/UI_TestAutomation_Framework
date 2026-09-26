@@ -19,8 +19,8 @@ public class TestBase
 
     public void setup(
             @Optional("chrome") String browser,
-            @Optional("false") boolean isLamdatest,
-            @Optional("true") boolean isHeadless, ITestResult result)
+            @Optional("true") boolean isLamdatest,
+            @Optional("false") boolean isHeadless, ITestResult result)
     {
         this.isLamdatest=isLamdatest;
 

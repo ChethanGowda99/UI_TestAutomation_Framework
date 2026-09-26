@@ -35,8 +35,8 @@
           </suiteXmlFiles>
           <systemPropertyVariables>
             <browser>chrome</browser>
-            <isLamdatest>false</isLamdatest>
-            <isHeadless>true</isHeadless>
+            <isLamdatest>true</isLamdatest>
+            <isHeadless>false</isHeadless>
           </systemPropertyVariables>
         </configuration>
       </plugin>
