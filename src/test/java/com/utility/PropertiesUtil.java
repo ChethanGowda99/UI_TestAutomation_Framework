@@ -11,7 +11,7 @@ import java.util.Properties;
 public class PropertiesUtil {
 
     public static String readProperty(Env env,String propertyName)  {
-        File propfile=new File(System.getProperty("user.dir")+"\\config\\"+env+".properties");
+        File propfile=new File(System.getProperty("user.dir")+"//config//"+env+".properties");
        // C:\Users\SCIndia\IdeaProjects\UI_TestAutomation_Framework
        // System.out.println(System.getProperty("user.dir"));
         FileReader filereader= null;

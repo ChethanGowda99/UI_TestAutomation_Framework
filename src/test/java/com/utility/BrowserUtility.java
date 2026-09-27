@@ -136,7 +136,9 @@ public String takeScreenshot(String name)
         Date date=new Date();
         SimpleDateFormat formate = new SimpleDateFormat("HH-mm-ss-SSS");
        String timeStamp =formate.format(date);
-       String path=System.getProperty("user.dir")+"//screenshot//"+name+"-"+timeStamp+".png";
+
+       String path="./screenshot/"+name+"-"+timeStamp+".png";
+
        File screenshotFile=new File(path);
         try {
             FileUtils.copyFile(screenshotdata,screenshotFile);
