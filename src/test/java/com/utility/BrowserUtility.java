@@ -8,13 +8,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public abstract class BrowserUtility
 {
@@ -98,6 +101,7 @@ public abstract class BrowserUtility
     public void goToWebsite(String url)
     {
         driver.get().get(url);
+        driver.get().manage().window().maximize();
     }
     public void maximizeWindow()
     {
@@ -108,10 +112,22 @@ public abstract class BrowserUtility
         WebElement element =driver.get().findElement(locator);//find element!!
         element.click();
     }
-    public void enterText(By locator ,String texttoenter)
+    public void enterText(By locator ,String textToEnter)
     {
         WebElement element= driver.get().findElement(locator);
-        element.sendKeys(texttoenter);
+
+        element.sendKeys(textToEnter);
+    }
+    public void clearText(By textBoxlocator )
+    {
+        WebElement element= driver.get().findElement(textBoxlocator);
+        element.clear();
+    }
+
+    public void enterSpecialKey(By locator ,Keys keyToEnter)
+    {
+        WebElement element= driver.get().findElement(locator);
+        element.sendKeys(keyToEnter);
     }
     public String getVisibleText(By locator)
     {
@@ -119,6 +135,32 @@ public abstract class BrowserUtility
         WebElement element= driver.get().findElement(locator);
         return element.getText();
     }
+
+    public String getVisibleText(WebElement element)
+    {
+        return element.getText();
+    }
+    public List<String> getAllVisibleText(By locator)
+    {
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+      List<WebElement> elementList= driver.get().findElements(locator);
+      List<String> visibleTestList=new ArrayList<String>();
+      for(WebElement element : elementList)
+      {
+          System.out.println(getVisibleText(element));
+          visibleTestList.add(getVisibleText(element));
+      }
+      return visibleTestList;
+
+    }
+    public void selectFromDropDown(By dropDownLocator, String optionToSelect)
+    {
+        WebElement element= driver.get().findElement(dropDownLocator);
+        Select select =new Select(element);
+        select.selectByVisibleText(optionToSelect);
+    }
+
+
 public String takeScreenshot(String name)
     {
         System.out.println("STEP 1: Screenshot method started");
