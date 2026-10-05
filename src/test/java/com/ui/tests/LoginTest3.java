@@ -63,7 +63,7 @@ public class LoginTest3 extends TestBase
         //String userName=homepage.goToLoginPage()
         // .doLoginWith("test12@test.com","Test@1234").getUserName();
         Assert.assertEquals(homepage.goToLoginPage()
-                .doLoginWith(user.getEmailAddress(),user.getPassword()).getUserName() ,"Qa MS");
+                .doLoginWith(user.getEmailAddress(),user.getPassword()).getUserName() ,"Qa MS1");
 
 
 
