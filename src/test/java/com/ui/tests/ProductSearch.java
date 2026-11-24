@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class ProductSearch extends TestBase
 {
     private MyAccountPage myAccountPage;
-    private static final String SEARCH_ITEM="Mens Wallet";
+    private static final String SEARCH_ITEM="Printed Summer Dress";
     @BeforeMethod
     public void setUp()
     {

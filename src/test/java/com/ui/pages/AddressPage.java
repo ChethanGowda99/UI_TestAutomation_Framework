@@ -20,12 +20,14 @@ public class AddressPage extends BrowserUtility
     private static final By OTHER_TEXT_BOX_LOCATOR=By.id("other");
     private static final By ADDRESS_ALIAS_TEXT_BOX_LOCATOR=By.id("alias");
     private static final By SAVE_ADDRESS_LOCATOR=By.id("submitAddress");
+    private static final By ADDRESS_HEADING=By.tagName("h3");
+
 
 
     public AddressPage(WebDriver driver) {
         super(driver);
     }
-    public void saveAddress(AddressPOJO addressPOJO)
+    public String saveAddress(AddressPOJO addressPOJO)
     {
 
         enterText(COMPANY_TEXT_BOX_LOCATOR,addressPOJO.getCompany());
@@ -39,9 +41,9 @@ public class AddressPage extends BrowserUtility
         enterText(OTHER_TEXT_BOX_LOCATOR,addressPOJO.getOtherInfo());
         clearText(ADDRESS_ALIAS_TEXT_BOX_LOCATOR);
         enterText(ADDRESS_ALIAS_TEXT_BOX_LOCATOR,addressPOJO.getAddressAlias());
-
-
         clickOn(SAVE_ADDRESS_LOCATOR);
+       String newAddress =getVisibleText(ADDRESS_HEADING);
+       return newAddress;
 
     }
 
